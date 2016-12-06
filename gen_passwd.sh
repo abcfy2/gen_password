@@ -35,7 +35,7 @@ gen_random_passwd() {
         1) PASSWD_PATTERN='0-9' ;;
         2) PASSWD_PATTERN='a-z0-9' ;;
         3) PASSWD_PATTERN='a-zA-Z0-9' ;;
-        4) PASSED_PATTERN='[[:graph:]]' ;;
+        4) PASSWD_PATTERN='[:graph:]' ;;
     esac
 
     tr -dc "${PASSWD_PATTERN}" < /dev/urandom | fold -w "${LENGTH}" | head -1
