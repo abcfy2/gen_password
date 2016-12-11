@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 help() {
     cat <<EOF
@@ -41,7 +41,7 @@ gen_random_passwd() {
     tr -dc "${PASSWD_PATTERN}" < /dev/urandom | fold -w "${LENGTH}" | head -1
 }
 
-declare -i LENGTH=8
-declare -i LEVEL=3
+LENGTH=8
+LEVEL=3
 parse_arg "$@"
 gen_random_passwd
